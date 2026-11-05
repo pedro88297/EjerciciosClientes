@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="reproductor">
+        <h1>Reproductor de música</h1>
+
+        <h3>Canciones</h3>
+        <ul id="listaCanciones">
+            <li data-indice="0">Canción 1</li>
+            <li data-indice="1">Canción 2</li>
+            <li data-indice="2">Canción 3</li>
+        </ul>
+
+        <h2 id="tituloCancion">Canción 1</h2>
+        <p id="estado">Detenida</p>
+
+        <div class="botones">
+            <button id="anterior">Anterior</button>
+            <button id="reproducir">Reproducir</button>
+            <button id="pausar">Pausar</button>
+            <button id="detener">Detener</button>
+            <button id="siguiente">Siguiente</button>
+        </div>
+
+        <div class="volumen">
+            <label for="volumen">Volumen:</label>
+            <input type="range" id="volumen" min="0" max="100" value="50">
+            <span id="valorVolumen">50%</span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
