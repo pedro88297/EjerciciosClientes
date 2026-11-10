@@ -1,8 +1,8 @@
 
 let descripcion = document.getElementById("descripcion");
-let icono = document.getElementsByClassName("icono"[0]);
+let icono = document.getElementsByClassName("icono")[0];
 
-let url = "https://api.open-meteo.com/v1/forecast?latitude=38.91611&longitude=-6.34366&current=weather_code&timezone=Europe%2FMadrid&forecast_days=1";;
+let url = "https://api.open-meteo.com/v1/forecast?latitude=38.91611&longitude=-6.34366&current=weather_code&timezone=Europe%2FMadrid&forecast_days=1";
 
 fetch(url)
     .then(response => {
