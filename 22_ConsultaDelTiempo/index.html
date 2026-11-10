@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El tiempo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header>
+            <p class="ubicacion">🌍 CONSULTA METEOROLÓGICA</p>
+            <h1>El tiempo hoy</h1>
+            <p class="subtitulo">Consulta el tiempo de tu ciudad</p>
+        </header>
+
+        <section class="selector">
+            <label for="localidad">Selecciona una localidad:</label>
+
+            <select id="localidad">
+                <option value="merida">Mérida</option>
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+            </select>
+        </section>
+
+        <section class="tarjeta">
+
+            <div class="icono" id="icono">🌤️</div>
+
+            <h2 id="descripcion">Consultando...</h2>
+
+            <h3 id="nombreLocalidad">Mérida</h3>
+
+            <div class="temperatura">
+                <span id="temperatura">--</span>
+                <span id="unidadTemperatura">°C</span>
+            </div>
+
+            <div class="datos">
+
+                <div class="dato">
+                    <span>💧</span>
+                    <p>Humedad</p>
+                    <strong id="humedad">--</strong>
+                    <small id="unidadHumedad">%</small>
+                </div>
+
+                <div class="dato">
+                    <span>💨</span>
+                    <p>Viento</p>
+                    <strong id="viento">--</strong>
+                    <small id="unidadViento">km/h</small>
+                </div>
+
+            </div>
+
+            <div class="separador"></div>
+
+            <p class="fecha">🕒 Última actualización</p>
+            <p id="hora">--</p>
+
+            <p id="estado" class="estado">Consultando...</p>
+
+        </section>
+
+        <footer>
+            <p>Datos meteorológicos proporcionados por Open-Meteo</p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

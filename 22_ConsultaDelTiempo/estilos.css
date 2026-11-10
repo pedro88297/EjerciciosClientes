@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a70, #2c5364);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+.ubicacion {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #a9d9ff;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 15px 0 10px;
+}
+
+.subtitulo {
+    color: #c5d8e9;
+    font-size: 16px;
+}
+
+.selector {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.selector label {
+    display: block;
+    margin-bottom: 10px;
+    color: #c5d8e9;
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: #203a70;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tarjeta {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.icono {
+    font-size: 75px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 15px 0 5px;
+}
+
+.temperatura {
+    margin: 15px 0 25px;
+}
+
+#temperatura {
+    font-size: 65px;
+    font-weight: bold;
+}
+
+#unidadTemperatura {
+    font-size: 30px;
+    vertical-align: top;
+}
+
+.datos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dato {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.dato span {
+    font-size: 25px;
+}
+
+.dato p {
+    color: #c5d8e9;
+    font-size: 14px;
+}
+
+.dato strong {
+    font-size: 20px;
+}
+
+.dato small {
+    font-size: 13px;
+}
+
+.separador {
+    width: 60px;
+    height: 3px;
+    background: #8bd3ff;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+.fecha {
+    color: #c5d8e9;
+    font-size: 14px;
+}
+
+#hora {
+    font-size: 15px;
+}
+
+.estado {
+    color: #a9d9ff;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 25px;
+    color: #b5c9d9;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 34px;
+    }
+
+    .tarjeta {
+        padding: 25px 15px;
+    }
+
+    #temperatura {
+        font-size: 55px;
+    }
+
+    .datos {
+        gap: 10px;
+    }
+}
