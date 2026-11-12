@@ -178,3 +178,20 @@ footer {
         gap: 10px;
     }
 }
+
+#prevision {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.hora {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e8f0f8;
+}
+
+.hora p {
+    margin: 5px;
+}

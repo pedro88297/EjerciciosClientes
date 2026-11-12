@@ -17,6 +17,8 @@ let unidadViento = document.getElementById("unidadViento");
 let hora = document.getElementById("hora");
 let estado = document.getElementById("estado");
 
+let prevision = document.getElementById("prevision");
+
 let localidades = {
     merida: {
         nombre: "Mérida",
@@ -37,6 +39,63 @@ let localidades = {
     }
 };
 
+function obtenerIcono(codigo) {
+
+    switch (codigo) {
+
+        case 0:
+            return "☀️";
+
+        case 1:
+            return "🌤️";
+
+        case 2:
+            return "⛅";
+
+        case 3:
+            return "☁️";
+
+        case 45:
+        case 48:
+            return "🌫️";
+
+        case 51:
+        case 53:
+        case 55:
+            return "🌦️";
+
+        case 56:
+        case 57:
+        case 61:
+        case 63:
+        case 65:
+        case 66:
+        case 67:
+        case 80:
+        case 81:
+        case 82:
+            return "🌧️";
+
+        case 71:
+        case 73:
+        case 75:
+            return "❄️";
+
+        case 77:
+        case 85:
+        case 86:
+            return "🌨️";
+
+        case 95:
+        case 96:
+        case 99:
+            return "⛈️";
+
+        default:
+            return "🌤️";
+    }
+}
+
 function consultarTiempo() {
 
     let ciudad = localidades[localidad.value];
@@ -44,7 +103,7 @@ function consultarTiempo() {
     nombreLocalidad.textContent = ciudad.nombre;
     estado.textContent = "Consultando...";
 
-    let url = `https://api.open-meteo.com/v1/forecast?latitude=${ciudad.latitud}&longitude=${ciudad.longitud}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto`;
+    let url = `https://api.open-meteo.com/v1/forecast?latitude=${ciudad.latitud}&longitude=${ciudad.longitud}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&hourly=temperature_2m,weather_code&timezone=auto`;
 
     fetch(url)
         .then(response => {
@@ -58,6 +117,9 @@ function consultarTiempo() {
 
             let datos = data.current;
             let unidades = data.current_units;
+            let horas = data.hourly.time;
+            let temperaturas = data.hourly.temperature_2m;
+            let codigos = data.hourly.weather_code;
 
             temperatura.textContent = datos.temperature_2m;
             unidadTemperatura.textContent = unidades.temperature_2m;
@@ -69,6 +131,30 @@ function consultarTiempo() {
             unidadViento.textContent = unidades.wind_speed_10m;
 
             hora.textContent = datos.time.replace("T", " ");
+
+            let indice = horas.findIndex(function (h) {
+                return h > datos.time;
+            });
+
+            prevision.innerHTML = "";
+
+            if (indice !== -1) {
+
+                for (let i = indice; i < indice + 8 && i < horas.length; i++) {
+
+                    let horaPrevision = horas[i].split("T")[1];
+                    let temperaturaPrevision = temperaturas[i];
+                    let iconoPrevision = obtenerIcono(codigos[i]);
+
+                    prevision.innerHTML += `
+            <div class="hora">
+                <p>${horaPrevision}</p>
+                <p>${iconoPrevision}</p>
+                <p>${temperaturaPrevision} °C</p>
+            </div>
+        `;
+                }
+            }
 
             let codigo = datos.weather_code;
 
