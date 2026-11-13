@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+header {
+    background-color: #173b57;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.filtros,
+.resultados {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #173b57;
+}
+
+.grupo-filtros {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.campo {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-weight: bold;
+}
+
+select {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 14px;
+}
+
+select:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+.campo-checkbox {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo-checkbox input {
+    width: 17px;
+    height: 17px;
+}
+
+.campo-checkbox label {
+    font-weight: normal;
+}
+
+.informacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.informacion p {
+    background-color: #eef3f7;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.informacion span {
+    font-weight: bold;
+}
+
+.mensaje {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #eef3f7;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #173b57;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f7f9;
+}
+
+footer {
+    background-color: #173b57;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    .filtros,
+    .resultados {
+        padding: 18px;
+    }
+
+    .grupo-filtros {
+        flex-direction: column;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .informacion {
+        flex-direction: column;
+    }
+}

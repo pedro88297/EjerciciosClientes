@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de gasolineras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>⛽ Buscador de gasolineras</h1>
+        <p>Consulta y compara los precios de los carburantes</p>
+    </header>
+
+    <main>
+
+        <section class="filtros">
+            <h2>Selecciona tu ubicación</h2>
+
+            <div class="grupo-filtros">
+
+                <div class="campo">
+                    <label for="comunidad">Comunidad autónoma</label>
+                    <select id="comunidad">
+                        <option value="">Selecciona una comunidad</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="provincia">Provincia</label>
+                    <select id="provincia" disabled>
+                        <option value="">Selecciona una provincia</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="municipio">Municipio</label>
+                    <select id="municipio" disabled>
+                        <option value="">Selecciona un municipio</option>
+                    </select>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="filtros">
+            <h2>Filtros de búsqueda</h2>
+
+            <div class="grupo-filtros">
+
+                <div class="campo">
+                    <label for="combustible">Combustible</label>
+                    <select id="combustible">
+                        <option value="gasolina">Gasolina 95 E5</option>
+                        <option value="diesel">Gasóleo A</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="orden">Ordenar precios</label>
+                    <select id="orden">
+                        <option value="ascendente">Precio: menor a mayor</option>
+                        <option value="descendente">Precio: mayor a menor</option>
+                    </select>
+                </div>
+
+                <div class="campo campo-checkbox">
+                    <input type="checkbox" id="soloAbiertas">
+                    <label for="soloAbiertas">Solo abiertas ahora</label>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="resultados">
+
+            <h2>Resultados de la búsqueda</h2>
+
+            <div class="informacion">
+                <p>Municipio: <span id="nombreMunicipio">No seleccionado</span></p>
+                <p>Combustible: <span id="nombreCombustible">Gasolina 95 E5</span></p>
+                <p>Estaciones encontradas: <span id="contador">0</span></p>
+                <p>Última actualización: <span id="fechaActualizacion">No disponible</span></p>
+            </div>
+
+            <div id="mensaje" class="mensaje">
+                Selecciona una comunidad, provincia y municipio para consultar las gasolineras.
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rótulo</th>
+                            <th>Dirección</th>
+                            <th>Localidad</th>
+                            <th>Horario</th>
+                            <th>Estado</th>
+                            <th>Precio (€/l)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaGasolineras">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Buscador de gasolineras · API oficial de precios de carburantes</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
